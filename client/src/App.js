@@ -1,26 +1,24 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Search from "./pages/Search";
-import Saved from "./pages/Saved";
-import NavTabs from "./components/NavTabs";
-import "./App.css";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Jumbotron from "./components/Jumbotron";
+import NavBar from "./components/Nav";
+import Books from "./pages/Books";
 
-class App extends Component {
-  render() {
-    return (
-      <Router>
+
+
+function App() {
+  return (
+    <Router>
       <div>
-        <NavTabs/>
+        <NavBar/>
+        <Jumbotron />
         <Switch>
-          <Route exact path="/" component={Search} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/saved" component={Saved} />
+          <Route exact path="/" component={Books}/>
+          <Route exact path="/saved" component={Books}/>
         </Switch>
       </div>
     </Router>
-    );
-  }
+  )
 }
 
 export default App;
